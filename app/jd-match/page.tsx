@@ -112,10 +112,10 @@ export default function JDMatchPage() {
   }
 
   return (
-    <div className="max-w-4xl">
-      <div className="bg-white rounded-lg shadow-md p-8">
-        <h1 className="text-3xl font-bold mb-2">JD 匹配度分析</h1>
-        <p className="text-gray-600 mb-6">
+    <div className="max-w-4xl mx-auto">
+      <div className="bg-white rounded-lg shadow-md p-4 md:p-8">
+        <h1 className="text-2xl md:text-3xl font-bold mb-2">JD 匹配度分析</h1>
+        <p className="text-sm md:text-base text-gray-600 mb-4 md:mb-6">
           上传你心仪的岗位描述，AI告诉你该如何修改简历
         </p>
 
@@ -136,7 +136,7 @@ export default function JDMatchPage() {
                 value={jdText}
                 onChange={(e) => setJdText(e.target.value)}
                 placeholder="请粘贴或输入完整的岗位描述..."
-                className="w-full h-64 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
+                className="w-full h-48 md:h-64 px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
                 required
               />
               <p className="mt-2 text-sm text-gray-500">
@@ -156,7 +156,7 @@ export default function JDMatchPage() {
               </label>
 
               {/* 上传方式选择 */}
-              <div className="flex gap-4 mb-4">
+              <div className="flex gap-2 md:gap-4 mb-4">
                 <button
                   type="button"
                   onClick={() => {
@@ -167,7 +167,7 @@ export default function JDMatchPage() {
                       fileInputRef.current.value = ''
                     }
                   }}
-                  className={`px-4 py-2 rounded-lg border transition ${
+                  className={`flex-1 md:flex-none px-3 md:px-4 py-2 text-sm md:text-base rounded-lg border transition ${
                     uploadMode === 'text'
                       ? 'bg-primary text-white border-primary'
                       : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'
@@ -181,7 +181,7 @@ export default function JDMatchPage() {
                     setUploadMode('file')
                     setResumeText('')
                   }}
-                  className={`px-4 py-2 rounded-lg border transition ${
+                  className={`flex-1 md:flex-none px-3 md:px-4 py-2 text-sm md:text-base rounded-lg border transition ${
                     uploadMode === 'file'
                       ? 'bg-primary text-white border-primary'
                       : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'
@@ -199,7 +199,7 @@ export default function JDMatchPage() {
                     value={resumeText}
                     onChange={(e) => setResumeText(e.target.value)}
                     placeholder="请粘贴或输入您的简历内容，包括：工作经历、项目经验、技能、教育背景等..."
-                    className="w-full h-64 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
+                    className="w-full h-48 md:h-64 px-3 md:px-4 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
                     required={uploadMode === 'text'}
                   />
                 </div>
@@ -273,18 +273,18 @@ export default function JDMatchPage() {
               </p>
             </div>
 
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
               <button
                 type="submit"
                 disabled={isUploading}
-                className="flex-1 bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-dark transition disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex-1 bg-primary text-white px-4 md:px-6 py-2 md:py-3 text-sm md:text-base rounded-lg hover:bg-primary-dark transition disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isUploading ? '分析中...' : '开始分析'}
               </button>
               <button
                 type="button"
                 onClick={() => router.back()}
-                className="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition"
+                className="flex-1 sm:flex-none px-4 md:px-6 py-2 md:py-3 text-sm md:text-base border border-gray-300 rounded-lg hover:bg-gray-50 transition"
               >
                 取消
               </button>

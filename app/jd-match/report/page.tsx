@@ -80,17 +80,17 @@ function MatchReportContent() {
   }
 
   return (
-    <div className="max-w-6xl">
+    <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-          <div className="flex items-center justify-between">
+        <div className="bg-white rounded-lg shadow-md p-4 md:p-6 mb-4 md:mb-6">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
-              <h1 className="text-3xl font-bold mb-2">匹配度分析报告</h1>
-              <p className="text-gray-600">报告ID: {report.reportId}</p>
+              <h1 className="text-2xl md:text-3xl font-bold mb-2">匹配度分析报告</h1>
+              <p className="text-xs md:text-sm text-gray-600">报告ID: {report.reportId}</p>
             </div>
             <button
               onClick={() => router.push('/jd-match')}
-              className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition"
+              className="w-full sm:w-auto px-4 py-2 text-sm md:text-base border border-gray-300 rounded-lg hover:bg-gray-50 transition"
             >
               返回
             </button>
@@ -98,11 +98,11 @@ function MatchReportContent() {
         </div>
 
         {/* Match Score */}
-        <div className="bg-white rounded-lg shadow-md p-8 mb-6">
-          <h2 className="text-2xl font-bold mb-4">总体匹配度</h2>
-          <div className="flex items-center gap-8">
-            <div className={`w-32 h-32 rounded-full ${getScoreBgColor(report.matchScore)} flex items-center justify-center`}>
-              <span className={`text-4xl font-bold ${getScoreColor(report.matchScore)}`}>
+        <div className="bg-white rounded-lg shadow-md p-4 md:p-8 mb-4 md:mb-6">
+          <h2 className="text-xl md:text-2xl font-bold mb-4">总体匹配度</h2>
+          <div className="flex flex-col sm:flex-row items-center gap-4 md:gap-8">
+            <div className={`w-24 h-24 md:w-32 md:h-32 rounded-full ${getScoreBgColor(report.matchScore)} flex items-center justify-center flex-shrink-0`}>
+              <span className={`text-3xl md:text-4xl font-bold ${getScoreColor(report.matchScore)}`}>
                 {report.matchScore}
               </span>
             </div>
@@ -212,16 +212,16 @@ function MatchReportContent() {
         </div>
 
         {/* Actions */}
-        <div className="mt-6 flex gap-4">
+        <div className="mt-4 md:mt-6 flex flex-col sm:flex-row gap-3 md:gap-4">
           <button
             onClick={() => window.print()}
-            className="flex-1 bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-dark transition"
+            className="flex-1 bg-primary text-white px-4 md:px-6 py-2 md:py-3 text-sm md:text-base rounded-lg hover:bg-primary-dark transition"
           >
             打印报告
           </button>
           <button
             onClick={() => router.push('/jd-match')}
-            className="flex-1 border border-gray-300 px-6 py-3 rounded-lg hover:bg-gray-50 transition"
+            className="flex-1 border border-gray-300 px-4 md:px-6 py-2 md:py-3 text-sm md:text-base rounded-lg hover:bg-gray-50 transition"
           >
             分析新的JD
           </button>

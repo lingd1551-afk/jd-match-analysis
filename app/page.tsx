@@ -3,9 +3,9 @@ import Link from 'next/link'
 export default function Home() {
   return (
     <>
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold mb-2">欢迎回来,同学! 👋</h1>
-        <p className="text-gray-600">今天我们该如何提升你的竞争力?</p>
+      <div className="mb-6 md:mb-8">
+        <h1 className="text-2xl md:text-3xl font-bold mb-2">欢迎回来,同学! 👋</h1>
+        <p className="text-sm md:text-base text-gray-600">今天我们该如何提升你的竞争力?</p>
       </div>
 
       {/* Key Metrics */}
@@ -34,8 +34,8 @@ export default function Home() {
       </div>
 
       {/* Quick Start */}
-      <div className="mb-8">
-        <h2 className="text-2xl font-bold mb-4">快速开始</h2>
+      <div className="mb-6 md:mb-8">
+        <h2 className="text-xl md:text-2xl font-bold mb-4">快速开始</h2>
         <div className="grid md:grid-cols-3 gap-6">
           <Link
             href="/jd-match"
